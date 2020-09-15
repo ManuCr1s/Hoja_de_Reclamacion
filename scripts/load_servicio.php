@@ -1,5 +1,6 @@
 <?php
-$unidad = mysqli_query(mysqli_connect("127.0.0.1","root","","reclamacion"), "SELECT nombre FROM unidad");
+require_once "conexion.php";
+$unidad = mysqli_query($conexion, "SELECT nombre FROM unidad");
 $respuesta = mysqli_fetch_all($unidad);
 $j = 0;
 echo '<option value="">SELECCIONE</option>';

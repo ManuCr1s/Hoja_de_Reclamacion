@@ -2,6 +2,7 @@
 session_start();
 $validaciones=[];
 $estado='danger';
+require_once "conexion.php";
 function validacion_fecha($fecha){
     for($i = 0; $i <= 2; $i++){
         $valores[$i] = explode('-',$fecha);
@@ -165,24 +166,24 @@ if(!empty($_POST['captcha'])){
 }
 if(count($validaciones) == 0){
     
-        $usuario = mysqli_query(mysqli_connect("127.0.0.1","root","","reclamacion"), "INSERT INTO usuario(tipo_documento,nombre_usuario,domicilio_usuario,numero_documento,email,telefono) 
+        $usuario = mysqli_query($conexion, "INSERT INTO usuario(tipo_documento,nombre_usuario,domicilio_usuario,numero_documento,email,telefono) 
             VALUES('{$_POST['documento']}', '{$_POST['nombre']}','{$_POST['domicilio']}','{$_POST['numero_documento']}','{$_POST['email']}','{$_POST['telefono']}')");
         if(!empty($_POST['numero_documento_tercero'])){
-            $tercero = mysqli_query(mysqli_connect("127.0.0.1","root","","reclamacion"), "INSERT INTO tercero(numero_tercero ,tipo_tercero,nombre_tercero,domicilio_tercero,email_tercero,telefono_tercero) 
+            $tercero = mysqli_query($conexion, "INSERT INTO tercero(numero_tercero ,tipo_tercero,nombre_tercero,domicilio_tercero,email_tercero,telefono_tercero) 
             VALUES('{$_POST['numero_documento_tercero']}', '{$_POST['documento_tercero']}','{$_POST['nombre_tercero']}','{$_POST['domicilio_tercero']}','{$_POST['email_tercero']}','{$_POST['telefono_tercero']}')");
             if(empty($_POST['area'])){
-                $reclamo = mysqli_query(mysqli_connect("127.0.0.1","root","","reclamacion"), "INSERT INTO reclamo(id_unidad,id_usuario,id_tercero,fecha,detalles,estado)
+                $reclamo = mysqli_query($conexion, "INSERT INTO reclamo(id_unidad,id_usuario,id_tercero,fecha,detalles,estado)
                 VALUES('{$_POST['unidad']}','{$_POST['numero_documento']}','{$_POST['numero_documento_tercero']}','{$_POST['fecha']}','{$_POST['detalles']}','{$estado}')");
             }else{
-                $reclamo = mysqli_query(mysqli_connect("127.0.0.1","root","","reclamacion"), "INSERT INTO reclamo(id_unidad,id_area,id_usuario,id_tercero,fecha,detalles,estado)
+                $reclamo = mysqli_query($conexion, "INSERT INTO reclamo(id_unidad,id_area,id_usuario,id_tercero,fecha,detalles,estado)
                 VALUES('{$_POST['unidad']}','{$_POST['area']}','{$_POST['numero_documento']}','{$_POST['numero_documento_tercero']}','{$_POST['fecha']}','{$_POST['detalles']}','{$estado}')");
             }
         }else{
             if(empty($_POST['area'])){
-                $reclamo = mysqli_query(mysqli_connect("127.0.0.1","root","","reclamacion"), "INSERT INTO reclamo(id_unidad,id_usuario,fecha,detalles,estado)
+                $reclamo = mysqli_query($conexion, "INSERT INTO reclamo(id_unidad,id_usuario,fecha,detalles,estado)
                 VALUES('{$_POST['unidad']}','{$_POST['numero_documento']}','{$_POST['fecha']}','{$_POST['detalles']}','{$estado}')");
             }else{
-                $reclamo = mysqli_query(mysqli_connect("127.0.0.1","root","","reclamacion"), "INSERT INTO reclamo(id_unidad,id_area,id_usuario,fecha,detalles,estado)
+                $reclamo = mysqli_query($conexion, "INSERT INTO reclamo(id_unidad,id_area,id_usuario,fecha,detalles,estado)
                 VALUES('{$_POST['unidad']}','{$_POST['area']}','{$_POST['numero_documento']}','{$_POST['fecha']}','{$_POST['detalles']}','{$estado}')");
             }
         }
