@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-09-2020 a las 16:48:49
+-- Tiempo de generación: 15-09-2020 a las 18:12:07
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.6
 
@@ -96,6 +96,7 @@ CREATE TABLE `reclamo` (
   `id_tercero` varchar(100) DEFAULT NULL,
   `fecha` date NOT NULL,
   `detalles` varchar(1000) NOT NULL,
+  `autoriza` varchar(10) NOT NULL,
   `estado` char(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -219,7 +220,7 @@ ALTER TABLE `area`
 -- AUTO_INCREMENT de la tabla `reclamo`
 --
 ALTER TABLE `reclamo`
-  MODIFY `id_reclamo` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_reclamo` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `unidad`
