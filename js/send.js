@@ -20,6 +20,7 @@ $(document).ready(function(){
                     button: "Bien",
                   }).then(function () {
                     form.trigger("reset");
+                    location. reload();
                  });
             }
         })
