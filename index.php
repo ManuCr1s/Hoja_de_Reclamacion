@@ -167,11 +167,11 @@
                             </div>
                             <div class="form-group col-12">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                        <input class="form-check-input" type="radio" name="autorizo" id="inlineRadio1" value="si">
                                         <label class="form-check-label" for="inlineRadio1">SI</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                        <input class="form-check-input" type="radio" name="autorizo" id="inlineRadio1" value="no">
                                         <label class="form-check-label" for="inlineRadio1">NO</label>
                                     </div>
                             </div>
