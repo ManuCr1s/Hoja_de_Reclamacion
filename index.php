@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-        <div class="container-fluid paper position-relative d-flex flex-column shadow rounded-top p-3 border border-dark">
+        <div class="container-fluid paper position-relative d-flex flex-column shadow rounded-top p-3 border shadow">
                 <form method="post" class="p-4" id="form">
                     <div class="form-row d-flex justify-content-between px-5">
                         <div class="form-group">
@@ -22,7 +22,7 @@
                             <h1 class="text-center">LIBRO DE RECLAMACIONES</h1>
                     </div>
                     <div class="form-row p-3">
-                            <div class="form-group col-12 py-2 bg-primary">
+                            <div class="form-group col-12 py-2 bg-secondary">
                                 <h6 class="text-white px-3">1. ESTABLECIMIENTO</h6>
                             </div>
                         
@@ -41,7 +41,7 @@
                         
                     </div>
                     <div class="form-row p-3">
-                            <div class="form-group py-2 col-12 bg-danger">
+                            <div class="form-group py-2 col-12 bg-secondary">
                                 <h6 class="text-white px-3">2. ¿QUIEN PRESENTA EL RECLAMO?</h6>
                             </div>
                             <div class="form-group col-md-3 col-sm-12">
@@ -59,7 +59,7 @@
                             
                     </div>
                     <div class="form-row mt-3 p-3">
-                        <div class="form-group py-2 col-12 bg-dark"> 
+                        <div class="form-group py-2 col-12 bg-secondary"> 
                             <h6 class="text-white px-3">3. IDENTIFICACION DEL USUARIO</h6>
                         </div>
                         <div class="form-group col-md-6 col-sm-12">
@@ -100,7 +100,7 @@
                     </div>
 
                     <div class="d-none" id="bloque">
-                            <div class="form-group py-2 col-12 bg-success">
+                            <div class="form-group py-2 col-12 bg-secondary">
                                 <h6 class="text-white px-3">4. IDENTIFICACION DE QUIEN PRESENTA EL RECLAMO (En caso del ser el usuario afectado no es necesario su llenado)</h6>
                             </div>
                             <div class="form-group col-md-6 col-sm-12">
@@ -141,7 +141,7 @@
                     </div>
 
                     <div class="form-row mt-3 p-2">
-                            <div class="form-group py-2 col-12 mt-3 bg-info">
+                            <div class="form-group py-2 col-12 mt-3 bg-secondary">
                                 <h6 class="text-white px-3" id='one'>4. DETALLE DEL RECLAMO</h6>
                             </div>
                             <div class="form-group col-md-6 col-sm-12">
@@ -193,6 +193,11 @@
                                 </div>
                                 <div class="form-group col-12 d-flex mt-3 justify-content-center">
                                     <button class="btn btn-warning w-25" type="submit">ENVIAR</button>
+                                </div>
+                                <div class="form-group col-12 d-flex mt-3 justify-content-center">
+                                        <p class="text-center text-white">Las IAFAS, IPRESS o UGIPRESS deben atender el reclamo en plazo de 30 días hábiles.
+                                        "Estimado usuario: Usted puede presentar su queja ante SUSALUD cuando no le hayan brindado un servicio, prestación o cobertura solicitada, o recibida de las IAFAS o IPRESS, o que dependan de las UGIPRESS públicas, privadas o mixtas. También ante la negativa de atención de su reclamo, irregularidad en su 
+                                        tramitación o disconformidad con el resultado del mismo".</p>
                                 </div>
                     </div>  
                 </form>
