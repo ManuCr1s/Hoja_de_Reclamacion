@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-09-2020 a las 18:12:07
+-- Tiempo de generación: 23-09-2020 a las 19:38:52
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.6
 
@@ -81,6 +81,20 @@ INSERT INTO `area` (`id`, `nombre_area`, `id_unidad`) VALUES
 (41, 'ÁREA DE INFORMÁTICA', 6),
 (42, 'ÁREA DE DOCENCIA', 2),
 (43, 'ÁREA DE INVESTIGACIÓN', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `atender`
+--
+
+CREATE TABLE `atender` (
+  `id_atender` int(200) NOT NULL,
+  `id_reclamo` int(200) NOT NULL,
+  `nombre_usuario` varchar(200) NOT NULL,
+  `dni_usuario` varchar(200) NOT NULL,
+  `detalle_solucion` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -180,6 +194,12 @@ ALTER TABLE `area`
   ADD KEY `id_unidad` (`id_unidad`);
 
 --
+-- Indices de la tabla `atender`
+--
+ALTER TABLE `atender`
+  ADD PRIMARY KEY (`id_atender`);
+
+--
 -- Indices de la tabla `reclamo`
 --
 ALTER TABLE `reclamo`
@@ -217,10 +237,16 @@ ALTER TABLE `area`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
+-- AUTO_INCREMENT de la tabla `atender`
+--
+ALTER TABLE `atender`
+  MODIFY `id_atender` int(200) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `reclamo`
 --
 ALTER TABLE `reclamo`
-  MODIFY `id_reclamo` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_reclamo` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `unidad`
