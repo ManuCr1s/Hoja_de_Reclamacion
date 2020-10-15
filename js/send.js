@@ -17,11 +17,26 @@ $(document).ready(function(){
                     title: "Formulario enviado",
                     text: "¡Satisfactoriamente!",
                     icon: "success",
-                    button: "Bien",
+                    buttons:"Descargar PDF",
                   }).then(function () {
-                    form.trigger("reset");
-                    location. reload();
-                 });
+                    $.ajax({
+                        method:"POST",
+                        data:form.serialize(),
+                        dataType: 'native',
+                        url: "scripts/imprimir.php",
+                        xhrFields: {
+                          responseType: 'blob'
+                        }
+                    }).done(function(blob){
+                        console.log(blob.size);
+                          var link=document.createElement('a');
+                          link.href=window.URL.createObjectURL(blob);
+                          link.download="Dossier_" + new Date() + ".pdf";
+                          link.click();
+                          form.trigger("reset");
+                          location. reload();
+                      });
+               });
             }
         })
         return false;

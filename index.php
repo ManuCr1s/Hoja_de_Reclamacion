@@ -203,6 +203,7 @@
                 </form>
         </div>
     <script src="js/jquery.js"></script>
+    <script src="js/jquery-ajax-native.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="js/load_servicio.js"></script>
     <script src="js/refresh.js"></script>
