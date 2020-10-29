@@ -32,9 +32,9 @@
                             <div class="form-group col-md-8 col-sm-12 p-3">
                                     <h6 class="font-weight-bold">IPRESS</h6>
                                     <input class="form-control" type="text" value= "HOSPITAL REGIONAL DANIEL ALCIDES CARRION - PASCO" disabled>
-                                    <h6 class="font-weight-bold">Direccion</h6>
+                                    <h6 class="font-weight-bold">DIRECCION</h6>
                                     <input class="form-control" type="text" value= "Av. Daniel Alcides Carrión 520 Cerro De Pasco -Yanacancha." disabled>
-                                    <h6 class="font-weight-bold">Fecha</h6>
+                                    <h6 class="font-weight-bold">FECHA DEL SUCESO</h6>
                                     <input class="form-control" type="date" name="fecha">
                                     <span data-key="fecha" class="label label-danger"></span>
                             </div>
