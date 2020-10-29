@@ -16,6 +16,14 @@ tipo_usuario_2.addEventListener('click',function(){
        one.innerHTML='5. DETALLE DEL RECLAMO';
        two.innerHTML='6. AUTORIZO NOTIFICACION DEL RESULTADO DEL RECLAMO AL EMAIL CONSIGNADO';
  });
+
+ $(".tabulacion").keypress(function (evt) {
+    var keycode = evt.charCode || evt.keyCode;
+    if (keycode  == 32) { 
+      return false;
+    }
+});
+
 servicio.addEventListener('change',function(){
     let selectedOption = this.options[servicio.selectedIndex].value;
     $.ajax({

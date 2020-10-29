@@ -1,3 +1,6 @@
+<?php
+ require_once "scripts/token.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +28,7 @@
                             <div class="form-group col-12 py-2 bg-secondary">
                                 <h6 class="text-white px-3">1. ESTABLECIMIENTO</h6>
                             </div>
-                        
+                            <input type="text" class="d-none" name="token" value="<?php echo $date;?>">
                             <div class="form-group col-md-8 col-sm-12 p-3">
                                     <h6 class="font-weight-bold">IPRESS</h6>
                                     <input class="form-control" type="text" value= "HOSPITAL REGIONAL DANIEL ALCIDES CARRION - PASCO" disabled>
@@ -93,7 +96,7 @@
                                     <h6 class="font-weight-bold">N° Documento</h6>
                                     <input class="form-control my-2" type="text" name="numero_documento">
                                     <h6 class="font-weight-bold">Email</h6>
-                                    <input class="form-control" type="text" name="email">
+                                    <input class="form-control tabulacion" type="text" name="email">
                                     <h6 class="font-weight-bold">Telefono</h6>
                                     <input class="form-control" type="text" name="telefono" maxlength="9">
                         </div>
@@ -134,7 +137,7 @@
                                         <h6 class="font-weight-bold ">N° Documento</h6>
                                         <input class="form-control my-2" type="text" name="numero_documento_tercero">
                                         <h6 class="font-weight-bold">Email</h6>
-                                        <input class="form-control" type="text" name="email_tercero">
+                                        <input class="form-control tabulacion" type="text" name="email_tercero">
                                         <h6 class="font-weight-bold">Telefono</h6>
                                         <input class="form-control" type="text" name="telefono_tercero"  maxlength="9">
                             </div>

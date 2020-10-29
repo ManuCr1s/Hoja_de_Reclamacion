@@ -175,19 +175,19 @@ if(count($validaciones) == 0){
             $tercero = mysqli_query($conexion, "INSERT INTO tercero(numero_tercero ,tipo_tercero,nombre_tercero,domicilio_tercero,email_tercero,telefono_tercero) 
             VALUES('{$_POST['numero_documento_tercero']}', '{$_POST['documento_tercero']}','{$_POST['nombre_tercero']}','{$_POST['domicilio_tercero']}','{$_POST['email_tercero']}','{$_POST['telefono_tercero']}')");
             if(empty($_POST['area'])){
-                $reclamo = mysqli_query($conexion, "INSERT INTO reclamo(id_unidad,id_usuario,id_tercero,fecha,detalles,autoriza,estado)
-                VALUES('{$_POST['unidad']}','{$_POST['numero_documento']}','{$_POST['numero_documento_tercero']}','{$_POST['fecha']}','{$_POST['detalles']}','{$_POST['autorizo']}','{$estado}')");
+                $reclamo = mysqli_query($conexion, "INSERT INTO reclamo(id_unidad,id_usuario,id_tercero,fecha,detalles,autoriza,estado,fecha_ingreso)
+                VALUES('{$_POST['unidad']}','{$_POST['numero_documento']}','{$_POST['numero_documento_tercero']}','{$_POST['fecha']}','{$_POST['detalles']}','{$_POST['autorizo']}','{$estado}','{$_POST['token']}')");
             }else{
-                $reclamo = mysqli_query($conexion, "INSERT INTO reclamo(id_unidad,id_area,id_usuario,id_tercero,fecha,detalles,autoriza,estado)
-                VALUES('{$_POST['unidad']}','{$_POST['area']}','{$_POST['numero_documento']}','{$_POST['numero_documento_tercero']}','{$_POST['fecha']}','{$_POST['detalles']}','{$_POST['autorizo']}','{$estado}')");
+                $reclamo = mysqli_query($conexion, "INSERT INTO reclamo(id_unidad,id_area,id_usuario,id_tercero,fecha,detalles,autoriza,estado,fecha_ingreso)
+                VALUES('{$_POST['unidad']}','{$_POST['area']}','{$_POST['numero_documento']}','{$_POST['numero_documento_tercero']}','{$_POST['fecha']}','{$_POST['detalles']}','{$_POST['autorizo']}','{$estado}','{$_POST['token']}')");
             }
         }else{
             if(empty($_POST['area'])){
-                $reclamo = mysqli_query($conexion, "INSERT INTO reclamo(id_unidad,id_usuario,fecha,detalles,autoriza,estado)
-                VALUES('{$_POST['unidad']}','{$_POST['numero_documento']}','{$_POST['fecha']}','{$_POST['detalles']}','{$_POST['autorizo']}','{$estado}')");
+                $reclamo = mysqli_query($conexion, "INSERT INTO reclamo(id_unidad,id_usuario,fecha,detalles,autoriza,estado,fecha_ingreso)
+                VALUES('{$_POST['unidad']}','{$_POST['numero_documento']}','{$_POST['fecha']}','{$_POST['detalles']}','{$_POST['autorizo']}','{$estado}','{$_POST['token']}')");
             }else{
-                $reclamo = mysqli_query($conexion, "INSERT INTO reclamo(id_unidad,id_area,id_usuario,fecha,detalles,autoriza,estado)
-                VALUES('{$_POST['unidad']}','{$_POST['area']}','{$_POST['numero_documento']}','{$_POST['fecha']}','{$_POST['detalles']}','{$_POST['autorizo']}','{$estado}')");
+                $reclamo = mysqli_query($conexion, "INSERT INTO reclamo(id_unidad,id_area,id_usuario,fecha,detalles,autoriza,estado,fecha_ingreso)
+                VALUES('{$_POST['unidad']}','{$_POST['area']}','{$_POST['numero_documento']}','{$_POST['fecha']}','{$_POST['detalles']}','{$_POST['autorizo']}','{$estado}','{$_POST['token']}')");
             }
         }
 
