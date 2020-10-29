@@ -39,7 +39,7 @@ $pdf->Ln(15);
 $pdf->SetFillColor(224,225,226);
 $pdf->Cell(190, 60,'', 0,0,'C',1);
 $pdf->SetX(15);
-$pdf->Ln(5);
+$pdf->Ln(3);
 $pdf->SetX(15);
 $pdf->Cell(170, 5,'1. IDENTIFICACION DEL USUARIO O TERCERO LEGITIMADO ', 0,0,'L',1);
 $pdf->Ln(7);
@@ -189,7 +189,7 @@ if(!empty($_POST['numero_documento_tercero'])){
 }
 $pdf->SetFillColor(233,233,233);
 $pdf->Cell(190, 65,'', 0,0,'C',1);
-$pdf->Ln(5);
+$pdf->Ln(3);
 $pdf->SetX(15);
 $pdf->SetFont('Arial','B',8);
 $pdf->Cell(170, 5,'3. DETALLE DEL RECLAMO ', 0,0,'L',1);
@@ -197,15 +197,15 @@ $pdf->Ln(7);
 $pdf->SetFillColor(255,255,255);
 $pdf->SetFont('Arial','B',7);
 $pdf->SetX(15);
-$pdf->Cell(180, 5,'UNIDAD O SERVICIO: '.utf8_decode($unidad[$_POST['unidad']]), 0,0,'L',1);
-$pdf->Ln(5);
+$pdf->Cell(180, 7,'UNIDAD O SERVICIO: '.utf8_decode($unidad[$_POST['unidad']]), 0,0,'L',1);
+$pdf->Ln(7);
 $pdf->SetX(15);
 if(!empty($_POST['area'])){
-    $pdf->Cell(180, 5,'AREA: '.utf8_decode($area[$_POST['area']]), 0,0,'L',1);
+    $pdf->Cell(180, 7,'AREA: '.utf8_decode($area[$_POST['area']]), 0,0,'L',1);
 }else{
-    $pdf->Cell(180, 5,'AREA: ', 0,0,'L',1);
+    $pdf->Cell(180, 7,'AREA: ', 0,0,'L',1);
 }
-$pdf->Ln(8);
+$pdf->Ln(10);
 $pdf->SetFillColor(255,255,255);
 $pdf->SetFont('Arial','B',7);
 $pdf->SetX(15);
@@ -224,7 +224,7 @@ $pdf->Cell(110, 8,'4. AUTORIZO NOTIFICACION DEL RESULTADO DEL RECLAMO AL EMAIL C
 $pdf->Cell(65, 8," ".strtoupper($_POST['autorizo']), 0,0,'R');
 $pdf->Ln(9);
 $pdf->SetFillColor(233,233,233);
-$pdf->SetFont('Arial','B',5);
+$pdf->SetFont('Arial','B',6);
 $pdf->MultiCell(190, 3, utf8_decode('Las IAFAS, IPRESS o UGIPRESS deben atender el reclamo en plazo de 30 días hábiles."Estimado usuario: Usted puede presentar su queja ante SUSALUD cuando no le hayan brindado un servicio, prestación o cobertura solicitada, o recibida de las IAFAS o IPRESS, o que dependan de las UGIPRESS públicas, privadas o mixtas. También ante la negativa de atención de su reclamo, irregularidad en su tramitación o disconformidad con el resultado del mismo". '), 0,'J',1);
 $pdf->Output();
 
