@@ -1,0 +1,55 @@
+--CREACION DE UNA LLAVE FORANEA
+
+CREATE TABLE invitacion (
+    	id_reclamo INT(200) PRIMARY KEY AUTO_INCREMENT,
+	id_unidad INT(200) NOT NULL,
+	id_usuario VARCHAR(100) NOT NULL,
+	fecha DATE NOT NULL,
+	detalles VARCHAR (1000) NOT NULL,
+	estado CHAR(100) NOT NULL, 	
+    	FOREIGN KEY (id_unidad) REFERENCES unidad(id),
+	FOREIGN KEY (id_usuario) REFERENCES usuario(numero_documento)
+);
+
+--CREACION DE UNA LLAVE FORANEA CUANDO LA TABLA ESTA CREADA
+
+
+ALTER TABLE ordenes ADD ticket VARCHAR(50) NOT NULL;
+ALTER TABLE usuario ADD CONSTRAINT numero_tercero FOREIGN KEY (numero_tercero) REFERENCES tercero(numero_tercero ) 
+
+--RENOMBRAR UNA TABLA YA CREADA DE UNA BASE DE DATOS
+
+	
+ALTER TABLE nombre_tabla RENAME nombre_nuevo_tabla;
+
+--SCRIPT PARA CREAR UN TRIGGER
+
+DELIMITER $$
+CREATE TRIGGER codigo_reclamo BEFORE INSERT ON reclamo
+FOR EACH ROW
+	BEGIN
+     		DECLARE num_rows INTEGER;
+     		SELECT COUNT(*) INTO num_rows FROM reclamo WHERE substring(cod_reclamo,1,4)=year(now());
+     		IF num_rows = 0 THEN
+     			SET NEW.cod_reclamo = CONCAT(year(now()),"-0001");
+     		ELSE
+     			SET NEW.cod_reclamo = CONCAT(year(now()),'-',(SELECT lpad(cast(MAX(substring(cod_reclamo,6,8))AS SIGNED)+1,4,'0')FROM reclamo WHERE substring(cod_reclamo,1,4)=year(now())));
+   		END IF;
+   	END;
+$$
+
+--SCRIPT PARA BORRAR UN TRIGGER
+
+DROP TRIGGER codigo_reclamo $$
+
+
+--SCRIPT PARA INSERTAR VALORES
+
+INSERT INTO `reclamo` (`id_reclamo`, `cod_reclamo`, `id_unidad`, `id_area`, `id_usuario`, `id_tercero`, `fecha`, `detalles`, `autoriza`, `estado`, `notificar`, `resultado`, `fecha_ingreso`) 
+VALUES 
+(NULL, '', '7', NULL, '04008785', NULL, '2020-10-07', 'NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO', 'si', 'danger', NULL, NULL, '2020-10-07');
+
+
+--SCRIPT PARA VOLVER EL ID EN 1
+
+ALTER TABLE tu_tabla_va_aqui AUTO_INCREMENT = 1
