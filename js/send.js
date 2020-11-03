@@ -28,13 +28,26 @@ $(document).ready(function(){
                           responseType: 'blob'
                         }
                     }).done(function(blob){
-                        console.log(blob.size);
-                          var link=document.createElement('a');
-                          link.href=window.URL.createObjectURL(blob);
-                          link.download="Dossier_" + new Date() + ".pdf";
-                          link.click();
-                          form.trigger("reset");
-                          location. reload();
+                            console.log(blob.size);
+                            var link=document.createElement('a');
+                            link.href=window.URL.createObjectURL(blob);
+                            link.download="Reclamo_" + new Date() + ".pdf";
+                            link.click();
+                            $.ajax({
+                                method:"POST",
+                                data:form.serialize(),
+                                url: "scripts/enviar.php",
+                            }).done(function(resp){
+                                $.ajax({
+                                    method:"POST",
+                                    data:form.serialize(),
+                                    url: "scripts/correo.php",
+                                }).done(function(res){
+                                    form.trigger("reset");
+                                    location. reload();
+                                });
+                            });
+                            
                       });
                });
             }
